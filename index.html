@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Saya</title>
+    <style>
+    body {
+            font-family: Arial, sans-serif;
+            background: radial-gradient(circle at center, #000428, #004e92);
+            text-align: center;
+            padding: 20px;
+            color: white;
+            overflow-x: hidden;
+            overflow-y: auto;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Animation keyframes */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes slideInFromLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Modified profile container */
+        .profile-container {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.3);
+            max-width: 500px;
+            margin: 20px auto;
+            backdrop-filter: blur(15px);
+            transform: perspective(1000px) rotateX(5deg);
+            animation: scaleIn 1s ease-out;
+        }
+
+        .welcome-text {
+            font-size: 24px;
+            color: white;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.8);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .profile-container img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #fff;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+            animation: scaleIn 1.2s ease-out;
+        }
+
+        .profile-container h1 {
+            animation: fadeInUp 1.4s ease-out;
+            margin-top: 20px;
+        }
+
+        .profile-container p {
+            animation: fadeInUp 1.6s ease-out;
+        }
+
+        /* Modified products section */
+        .products {
+            margin-top: 30px;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0px 0px 25px rgba(255, 255, 255, 0.2);
+            animation: fadeInUp 1.8s ease-out;
+        }
+
+        .product-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            padding: 20px 0;
+        }
+
+        .product-item {
+            animation: slideInFromLeft 2s ease-out;
+            transition: transform 0.3s ease;
+        }
+
+        .product-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-item img {
+            width: 200px;
+            height: 200px;
+            border-radius: 15px;
+            object-fit: cover;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+            transition: transform 0.3s ease;
+        }
+
+        .product-item img:hover {
+            transform: scale(1.05);
+        }
+
+        .product-item a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 20px;
+            background: #25D366;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 15px;
+            box-shadow: 0 0 15px rgba(37, 211, 102, 0.8);
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .product-item a:hover {
+            transform: scale(1.1);
+            background: #1fa855;
+        }
+
+        /* Modified social links */
+        .social-links {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            animation: fadeInUp 2.2s ease-out;
+        }
+
+        .social-links a img {
+            width: 60px;
+            height: 60px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+
+        .social-links a img:hover {
+            transform: scale(1.2);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .product-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .profile-container {
+                margin: 10px;
+                padding: 20px;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="stars"></div>
+    <script>
+        const starsContainer = document.querySelector('.stars');
+        for (let i = 0; i < 100; i++) {
+            let star = document.createElement('div');
+            star.className = 'star';
+            star.style.top = Math.random() * 100 + 'vh';
+            star.style.left = Math.random() * 100 + 'vw';
+            star.style.animationDelay = Math.random() * 2 + 's';
+            starsContainer.appendChild(star);
+        }
+    </script>
+    <div class="profile-container">
+        <div class="welcome-text">Welcome to my website</div>
+        <img src="https://img12.pixhost.to/images/524/570831008_imgtmp.jpg" alt="Foto Profil">
+        <h1>HAXZ XITERZ✪</h1>
+        <p>Deskripsi singkat tentang diri Anda, pekerjaan, atau keahlian.</p>
+    </div>
+    <div class="products">
+        <h2>All Produk</h2>
+        <p>Geser Untuk Melihat Semua Produk.</p>
+        <div class="product-list">
+            <div class="product-item"><img src="https://files.catbox.moe/rjo6kc.jpg" alt="Produk 1"><p>FILE FF GACOR</p><a href="https://wa.me/6285857475892?text=Saya%20ingin%20membeli%20File%Bang%201">BUY/BELI</a></div>
+            <div class="product-item"><img src="https://img12.pixhost.to/images/524/570830423_imgtmp.jpg" alt="Produk 2"><p>GROUP JB AMANAH</p><a href="https://chat.whatsapp.com/CZtcpjdzyZPCQ1HUAiybU5">Masuk</a></div>
+            <div class="product-item"><img src="https://files.catbox.moe/knf5ln.jpg" alt="Produk 3"><p>PERBAIKAN</p><a href="PERBAIKAM">Beli</a></div>
+        </div>
+    </div>
+    <div class="social-links">
+        <a href="https://wa.me/6285857475892" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"></a>
+        <a href="https://www.instagram.com/yourusername" target="_blank"><img src="https://img5.pixhost.to/images/2995/568919891_media.jpg" alt="Instagram"></a>
+        <a href="https://www.tiktok.com/@alwayshaxz" target="_blank"><img src="https://img5.pixhost.to/images/2995/568919526_media.jpg" alt="TikTok"></a>
+    </div>
+</body>
+</html>
